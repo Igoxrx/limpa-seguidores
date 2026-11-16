@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Limpa Seguidores",
+  "version": "2.0.0",
+  "description": "Revise seus seguidores do Instagram um por um e remova os fakes com um clique.",
+  "icons": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" },
+  "permissions": ["storage"],
+  "host_permissions": ["https://*.cdninstagram.com/*", "https://*.fbcdn.net/*"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://www.instagram.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
